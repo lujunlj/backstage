@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tencent.backstage.modules.system.dao.DeptDao" >
+  <resultMap id="BaseResultMap" type="com.tencent.backstage.modules.system.entity.Dept" >
+    <id column="uuid" property="uuid" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="pid" property="pid" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="enabled" property="enabled" jdbcType="BIT" />
+    <result column="del_flag" property="delFlag" jdbcType="VARCHAR" />
+    <result column="version" property="version" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    uuid, name, pid, create_time, enabled, del_flag,version
+  </sql>
+  <select id="selectDeptsByRoleid" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select * from sys_dept d
+    where d.uuid in (
+    select rd.dept_id from sys_roles_depts rd where rd.role_id =#{roleid}
+    )
+    and d.del_flag ='0'
+  </select>
+  <select id="findByPid" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from sys_dept
+    where pid = #{pid,jdbcType=VARCHAR}
+    and del_flag ='0'
+  </select>
+
+  <select id="selectById" resultType="com.tencent.backstage.modules.system.entity.Dept" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from sys_dept
+    where uuid = #{uuid,jdbcType=VARCHAR}
+    and del_flag ='0'
+  </select>
+
+    <select id="findWithPage" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        from sys_dept
+        ${ew.customSqlSegment}
+    </select>
+  <select id="findAll" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    from sys_dept
+    ${ew.customSqlSegment}
+  </select>
+</mapper>

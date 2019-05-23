@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tencent.backstage.modules.system.dao.PermissionDao" >
+  <resultMap id="BaseResultMap" type="com.tencent.backstage.modules.system.entity.Permission" >
+    <id column="uuid" property="uuid" jdbcType="VARCHAR" />
+    <result column="alias" property="alias" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="pid" property="pid" jdbcType="VARCHAR" />
+    <result column="version" property="version" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    uuid, alias, create_time, name, pid,version
+  </sql>
+  <select id="findByName" resultType="Permission" parameterType="java.lang.String">
+    select
+    <include refid="Base_Column_List" />
+    from sys_permission
+    where name = #{name}
+  </select>
+  <select id="findByPid" resultType="Permission" parameterType="java.lang.String">
+    select
+    <include refid="Base_Column_List" />
+    from sys_permission
+    where pid = #{pid}
+  </select>
+  <select id="findByRoles" resultMap="BaseResultMap" parameterType="java.util.List">
+    select
+    <include refid="Base_Column_List" />
+    from sys_permission p
+    where 1=1
+    and p.uuid in (
+    select rp.permission_id from sys_roles_permissions rp
+    where rp.role_id in
+    <foreach item="item" index="index" collection="roles" open="("
+             separator="," close=")">
+      #{item.uuid}
+    </foreach>
+    )
+  </select>
+  <select id="findByRoleId" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select
+    <include refid="Base_Column_List" />
+    from sys_permission p
+    where 1=1
+    and p.uuid in (
+    select rp.permission_id from sys_roles_permissions rp
+    where rp.role_id =#{roleid}
+    )
+  </select>
+    <select id="findWithPage" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        from sys_permission
+        ${ew.customSqlSegment}
+    </select>
+    <delete id="deletePhysicsById" parameterType="java.lang.String" >
+         delete from sys_permission where uuid = #{uuid,jdbcType=VARCHAR}
+    </delete>
+  <select id="findAll" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    from sys_permission
+    ${ew.customSqlSegment}
+  </select>
+
+</mapper>

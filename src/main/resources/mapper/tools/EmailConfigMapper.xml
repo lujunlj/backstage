@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tencent.backstage.modules.tools.dao.EmailConfigDao" >
+  <resultMap id="BaseResultMap" type="com.tencent.backstage.modules.tools.entity.EmailConfig" >
+    <id column="uuid" property="uuid" jdbcType="VARCHAR" />
+    <result column="from_user" property="fromUser" jdbcType="VARCHAR" />
+    <result column="host" property="host" jdbcType="VARCHAR" />
+    <result column="pass" property="pass" jdbcType="VARCHAR" />
+    <result column="port" property="port" jdbcType="VARCHAR" />
+    <result column="user" property="user" jdbcType="VARCHAR" />
+    <result column="version" property="version" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    uuid, from_user, host, pass, port, user,version
+  </sql>
+  <select id="findWithPage" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    from email_config
+    ${ew.customSqlSegment}
+  </select>
+  <select id="selectByPrimaryKey" resultType="com.tencent.backstage.modules.tools.entity.EmailConfig">
+    select
+    <include refid="Base_Column_List" />
+    from email_config limit 1
+  </select>
+</mapper>

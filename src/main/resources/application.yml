@@ -1,0 +1,22 @@
+spring:
+  profiles:
+     active: dev
+#    active: dev,mapper
+
+#日期格式
+fastjson:
+    dateformat: yyyy-MM-dd HH:mm:ss
+
+#七牛云
+qiniu:
+  # 文件大小 /M
+  max-size: 15
+
+#验证码有效时间/分钟
+code:
+  expiration: 5
+
+#上传头像url
+smMsUrl : https://sm.ms/api/upload
+#上传头像临时文件文件夹
+uploadFileTempPath : /uploadavatar/

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tencent.backstage.modules.system.dao.UserDao">
+    <resultMap id="BaseResultMap" type="com.tencent.backstage.modules.system.entity.User">
+        <id column="uuid" property="uuid" jdbcType="VARCHAR" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="phone" property="phone" jdbcType="VARCHAR" />
+        <result column="telephone" property="telephone" jdbcType="VARCHAR" />
+        <result column="address" property="address" jdbcType="VARCHAR" />
+        <result column="enabled" property="enabled" jdbcType="BIT" />
+        <result column="username" property="username" jdbcType="VARCHAR" />
+        <result column="password" property="password" jdbcType="VARCHAR" />
+        <result column="remark" property="remark" jdbcType="VARCHAR" />
+        <result column="email" property="email" jdbcType="VARCHAR" />
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+        <result column="last_password_reset_time" property="lastPasswordResetTime" jdbcType="TIMESTAMP" />
+        <result column="del_flag" property="delFlag" jdbcType="VARCHAR" />
+        <result column="avatar" property="avatar" jdbcType="VARCHAR" />
+        <result column="deptid" property="deptId" jdbcType="VARCHAR" />
+        <result column="jobid" property="jobId" jdbcType="VARCHAR" />
+        <result column="version" property="version" jdbcType="BIGINT" />
+        <association property="job" column="jobId" select="com.tencent.backstage.modules.system.dao.JobDao.selectById"/>
+        <association property="dept" column="deptId" select="com.tencent.backstage.modules.system.dao.DeptDao.selectById"/>
+        <collection  property="roles" column="uuid" select="com.tencent.backstage.modules.system.dao.RoleDao.findByUserId"/>
+    </resultMap>
+    <resultMap id="lazyLoadRoles" type="User" extends="BaseResultMap">
+        <collection select="com.tencent.backstage.modules.system.dao.UserDao.getRolesByUserId"
+                    column="uuid" ofType="Role"  property="roles" ></collection>
+    </resultMap>
+    <sql id="Base_Column_List" >
+        uuid, name, phone, telephone, address, enabled, username, password,  remark,
+        email, create_time, last_password_reset_time, del_flag,avatar,jobid,deptid,version
+    </sql>
+    <select id="findByEmail" resultMap="BaseResultMap"  parameterType="java.lang.String" >
+        select
+        <include refid="Base_Column_List" />
+        from sys_user a
+        where 1=1 and a.del_flag='0' and a.email = #{email}
+    </select>
+
+    <select id="loadUserByUsername" resultMap="lazyLoadRoles">
+        select
+        <include refid="Base_Column_List" />
+        from sys_user a
+        WHERE a.username=#{username} and (a.del_flag ='0' or a.del_flag is null)  ;
+    </select>
+    <select id="getRolesByUserId" resultType="Role">
+        SELECT r.* FROM sys_user_role u,sys_role r where u.roleid=r.uuid AND u.userid=#{uuid}
+    </select>
+    <update id="updatePass" >
+        UPDATE sys_user u set u.password =#{pass} WHERE u.username=#{username} and u.del_flag ='0'
+    </update>
+    <update id="updateAvatar" >
+        UPDATE sys_user u set u.avatar =#{url} WHERE u.username=#{username} and u.del_flag ='0'
+    </update>
+    <update id="updateEmail" >
+        UPDATE sys_user u set u.email =#{email} WHERE u.username=#{username} and u.del_flag ='0'
+    </update>
+
+    <insert id="addUserRoleBatch" parameterType="HashMap">
+        <if test="userid != null and userid != '' and roles != null and roles.size()>0">
+            insert into sys_user_role (userid,roleid) values
+            <foreach item="item" index="index" collection="roles" separator="," >
+                (#{userid} , #{item.uuid})
+            </foreach>
+        </if>
+    </insert>
+
+    <delete id="deleteUserRoleByUserId" parameterType="java.lang.String">
+        delete from sys_user_role  where userid = #{userid}
+    </delete>
+    <select id="findWithPage" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        from sys_user
+        ${ew.customSqlSegment}
+    </select>
+</mapper>

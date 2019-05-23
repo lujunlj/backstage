@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tencent.backstage.modules.system.dao.RoleDao">
+    <resultMap id="BaseResultMap" type="com.tencent.backstage.modules.system.entity.Role" >
+        <id column="uuid" property="uuid" jdbcType="VARCHAR" />
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="remark" property="remark" jdbcType="VARCHAR" />
+        <result column="data_scope" property="dataScope" jdbcType="VARCHAR" />
+        <result column="version" property="version" jdbcType="BIGINT" />
+        <collection column="uuid" property="depts" select="com.tencent.backstage.modules.system.dao.DeptDao.selectDeptsByRoleid"/>
+        <collection column="uuid" property="permissions" select="com.tencent.backstage.modules.system.dao.PermissionDao.findByRoleId"/>
+    </resultMap>
+    <sql id="Base_Column_List" >
+        uuid, create_time, name, remark, data_scope,version
+    </sql>
+    <select id="findList" resultType="Role">
+        select
+        <include refid="Base_Column_List" />
+        from sys_role
+        where 1=1
+        <if test="name != null and name != ''">
+          and name like concat('%',#{name,jdbcType=VARCHAR},'%')
+        </if>
+        order by create_time desc
+    </select>
+    <select id="findByName" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List" />
+        from sys_role
+        where name = #{name}
+    </select>
+    <select id="findByUserId" resultMap="BaseResultMap" parameterType="java.lang.String" >
+        select
+        <include refid="Base_Column_List" />
+        from sys_role r
+        left join sys_user_role ur on ur.roleid = r.uuid
+        where 1=1
+        and ur.userid = #{userid}
+    </select>
+    <delete id="deleteRolePermissions" parameterType="java.lang.String">
+        delete from sys_roles_permissions
+        where role_id = #{roleid}
+    </delete>
+    <insert id="updateRolePermissions" >
+        insert into sys_roles_permissions (role_id, permission_id)
+        values (#{roleid}, #{permissionid})
+    </insert>
+    <delete id="deleteRoleMenus" parameterType="java.lang.String">
+        delete from sys_roles_menus
+        where role_id = #{roleid}
+    </delete>
+    <insert id="updateRoleMenus" >
+        insert into sys_roles_menus (role_id, menu_id)
+        values (#{roleid}, #{menuid})
+    </insert>
+    <select id="findByMenuId" resultType="Role" parameterType="java.lang.String" >
+        select
+        <include refid="Base_Column_List" />
+        from sys_role r
+        left join sys_roles_menus ur on ur.role_id = r.uuid
+        where 1=1
+        and ur.menu_id = #{menuid}
+    </select>
+    <delete id="removeRoleMenu" >
+        delete from sys_roles_menus rm where rm.role_id =#{roleid} and rm.menu_id =#{menuid}
+    </delete>
+
+    <select id="findWithPage" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        from sys_role
+        ${ew.customSqlSegment}
+    </select>
+
+
+</mapper>

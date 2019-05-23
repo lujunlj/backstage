@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tencent.backstage.modules.system.dao.MenuDao" >
+  <resultMap id="BaseResultMap" type="com.tencent.backstage.modules.system.entity.Menu" >
+    <id column="uuid" property="uuid" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="i_frame" property="iFrame" jdbcType="BIT" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="component" property="component" jdbcType="VARCHAR" />
+    <result column="pid" property="pid" jdbcType="VARCHAR" />
+    <result column="sort" property="sort" jdbcType="BIGINT" />
+    <result column="icon" property="icon" jdbcType="VARCHAR" />
+    <result column="path" property="path" jdbcType="VARCHAR" />
+    <result column="version" property="version" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    uuid, create_time, i_frame, name, component, pid, sort, icon, path,version
+  </sql>
+  <select id="findByPid" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from sys_menu
+    where pid = #{pid,jdbcType=VARCHAR}
+  </select>
+  <select id="findByRoles_IdOrderBySortAsc" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from sys_menu sm
+    left join sys_roles_menus rm on rm.menu_id = sm.uuid
+    where rm.role_id = #{roleid}
+    order by sort asc
+  </select>
+  <select id="findByName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from sys_menu
+    where name = #{name,jdbcType=VARCHAR}
+  </select>
+  <insert id="insert" parameterType="Menu" >
+    insert into sys_menu (uuid, create_time, i_frame, 
+      name, component, pid, 
+      sort, icon, path)
+    values (#{uuid,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{iFrame,jdbcType=BIT}, 
+      #{name,jdbcType=VARCHAR}, #{component,jdbcType=VARCHAR}, #{pid,jdbcType=VARCHAR}, 
+      #{sort,jdbcType=BIGINT}, #{icon,jdbcType=VARCHAR}, #{path,jdbcType=VARCHAR})
+  </insert>
+  <select id="findByRoles" resultMap="BaseResultMap" parameterType="java.util.List">
+    select
+    <include refid="Base_Column_List" />
+    from sys_menu m
+    where 1=1
+    <if test="list != null and list.size()>0">
+      and m.uuid in (
+      select rp.menu_id from sys_roles_menus rp
+      where rp.role_id in
+      <foreach item="item" index="index" collection="list" open="("
+               separator="," close=")">
+        #{item.uuid}
+      </foreach>
+      )
+    </if>
+  </select>
+    <select id="findWithPage" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        from sys_menu
+        ${ew.customSqlSegment}
+    </select>
+    <select id="findAll" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        from sys_menu
+        ${ew.customSqlSegment}
+    </select>
+</mapper>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tencent.backstage.modules.monitor.dao.VisitDao" >
+  <resultMap id="BaseResultMap" type="com.tencent.backstage.modules.monitor.entity.Visit" >
+    <id column="uuid" property="uuid" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="date" property="date" jdbcType="VARCHAR" />
+    <result column="ip_counts" property="ipCounts" jdbcType="BIGINT" />
+    <result column="pv_counts" property="pvCounts" jdbcType="BIGINT" />
+    <result column="week_day" property="weekDay" jdbcType="VARCHAR" />
+    <result column="version" property="version" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    uuid, create_time, date, ip_counts, pv_counts, week_day,version
+  </sql>
+  <select id="findByDate" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List"/>
+    FROM sys_visit
+    where
+    date = #{date}
+  </select>
+  <select id="findAllVisits" resultMap="BaseResultMap" >
+    select
+     <include refid="Base_Column_List"/>
+     FROM sys_visit v
+     where v.create_time between str_to_date(#{date1},'%Y-%m-%d') and str_to_date(#{date2},'%Y-%m-%d');
+  </select>
+</mapper>
