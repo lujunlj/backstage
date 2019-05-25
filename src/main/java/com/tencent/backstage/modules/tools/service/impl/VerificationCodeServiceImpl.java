@@ -70,7 +70,7 @@ public class VerificationCodeServiceImpl extends BaseServiceImpl<VerificationCod
             throw new BadRequestException("无效验证码");
         } else {
             verificationCode.setStatus(false);
-            super.save(verificationCode);
+            super.updateById(verificationCode);
         }
     }
 

@@ -43,7 +43,7 @@ public class EmailController {
     @PreAuthorize("hasAnyRole('ADMIN','PICTURE_ALL','PICTURE_SEND')")
     @PostMapping(value = "/email")
     public ResponseEntity send(@Validated @RequestBody EmailVo emailVo) throws Exception {
-        log.warn("REST request to send Email : {}" +emailVo);
+        log.warn("REST request to send Email : {}" ,emailVo);
         emailService.send(emailVo,emailService.find());
         return new ResponseEntity(HttpStatus.OK);
     }

@@ -108,7 +108,7 @@ public class MenuServiceImpl extends BaseServiceImpl<MenuDao,Menu> implements Me
                         map.put("id",menu.getUuid());
                         map.put("label",menu.getName());
                         if(menuList!=null && menuList.size()!=0){
-                            map.put("childrens",getMenuTree(menuList));
+                            map.put("children",getMenuTree(menuList));
                         }
                         list.add(map);
                     }
@@ -214,7 +214,7 @@ public class MenuServiceImpl extends BaseServiceImpl<MenuDao,Menu> implements Me
         menu.setName(name);
         return menuDtoAndEntityMapper.toDto(menuDao.findAll(Wrappers.<Menu>lambdaQuery()
                     .like(StringUtils.isNotBlank(menu.getName()),Menu::getName,menu.getName())
-                    .orderByDesc(Menu::getCreateTime)));
+                    .orderByAsc(Menu::getSort)));
     }
 
 }

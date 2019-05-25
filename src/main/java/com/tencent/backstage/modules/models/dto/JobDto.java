@@ -5,7 +5,6 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 /**
  * Created with IDEA
@@ -26,4 +25,5 @@ public class JobDto implements Serializable {
     private String deptId;
     private String delFlag;
     private Long version;
+    private DeptDto dept;
 }

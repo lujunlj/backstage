@@ -126,7 +126,7 @@ public class DeptServiceImpl extends BaseServiceImpl<DeptDao,Dept> implements De
                             .eq(Dept::getDelFlag,Constants.NODELETE)
                             .like(StringUtils.isNotBlank(dept.getName()),Dept::getName,dept.getName())
                             .in(dept.getDeptids()!= null && !dept.getDeptids().isEmpty(),Dept::getUuid,dept.getDeptids())
-                            ).orderByDesc(Dept::getCreateTime));
+                            ).orderByAsc(Dept::getCreateTime));
         return deptDtoAndEntityMapper.toDto(depts);
     }
 }

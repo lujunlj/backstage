@@ -32,7 +32,7 @@ public class Picture extends Model<Picture> {
     private LocalDateTime createTime;
 
     @ApiModelProperty(value = "删除图片的URL")
-    @TableField("delete")
+    @TableField("`delete`")
     private String delete;
 
     @ApiModelProperty(value = "图片名称")

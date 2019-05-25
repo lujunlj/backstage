@@ -12,9 +12,13 @@
         <result column="version" property="version" jdbcType="BIGINT" />
         <collection column="uuid" property="depts" select="com.tencent.backstage.modules.system.dao.DeptDao.selectDeptsByRoleid"/>
         <collection column="uuid" property="permissions" select="com.tencent.backstage.modules.system.dao.PermissionDao.findByRoleId"/>
+        <collection column="uuid" property="menus" select="com.tencent.backstage.modules.system.dao.MenuDao.findByRoles_IdOrderBySortAsc"/>
     </resultMap>
     <sql id="Base_Column_List" >
         uuid, create_time, name, remark, data_scope,version
+    </sql>
+    <sql id="Base_Column_List2" >
+        r.uuid, r.create_time, r.name, r.remark, r.data_scope,r.version
     </sql>
     <select id="findList" resultType="Role">
         select
@@ -34,11 +38,12 @@
     </select>
     <select id="findByUserId" resultMap="BaseResultMap" parameterType="java.lang.String" >
         select
-        <include refid="Base_Column_List" />
+        <include refid="Base_Column_List2" />
         from sys_role r
         left join sys_user_role ur on ur.roleid = r.uuid
         where 1=1
         and ur.userid = #{userid}
+        order by r.create_time asc
     </select>
     <delete id="deleteRolePermissions" parameterType="java.lang.String">
         delete from sys_roles_permissions
@@ -58,11 +63,12 @@
     </insert>
     <select id="findByMenuId" resultType="Role" parameterType="java.lang.String" >
         select
-        <include refid="Base_Column_List" />
+        <include refid="Base_Column_List2" />
         from sys_role r
         left join sys_roles_menus ur on ur.role_id = r.uuid
         where 1=1
         and ur.menu_id = #{menuid}
+        order by r.create_time asc
     </select>
     <delete id="removeRoleMenu" >
         delete from sys_roles_menus rm where rm.role_id =#{roleid} and rm.menu_id =#{menuid}

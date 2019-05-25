@@ -1,5 +1,6 @@
 package com.tencent.backstage.modules.tools.service.impl;
 
+import cn.hutool.extra.mail.Mail;
 import cn.hutool.extra.mail.MailAccount;
 import cn.hutool.extra.mail.MailUtil;
 import com.tencent.backstage.common.base.BaseServiceImpl;
@@ -82,11 +83,13 @@ public class EmailServiceImpl extends BaseServiceImpl<EmailConfigDao, EmailConfi
          * 发送
          */
         try {
-            MailUtil.send(account,
-                    emailVo.getTos(),
-                    emailVo.getSubject(),
-                    content,
-                    true);
+            Mail.create(account)
+                                .setTos(emailVo.getTos().stream().toArray(String[]::new))
+                                .setTitle(emailVo.getSubject())
+                                .setContent(content)
+                                .setHtml(true)
+                                .send();
+//            MailUtil.send(account,emailVo.getTos(),emailVo.getSubject(),content,true);
         }catch (Exception e){
             throw new BadRequestException(e.getMessage());
         }

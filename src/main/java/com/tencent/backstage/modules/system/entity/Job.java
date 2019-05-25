@@ -51,6 +51,8 @@ public class Job extends Model<Job> {
     @Version
     private Long version;
 
+    @TableField(exist=false)
+    private Dept dept;
 
     @Override
     protected Serializable pkVal() {

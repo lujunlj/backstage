@@ -25,6 +25,6 @@
         <if test="map.label != null" >
             and dt.label like concat('%',#{map.label},'%')
         </if>
-        order by dt.create_time desc
+        order by  CAST(dt.sort AS SIGNED)  desc
     </select>
 </mapper>

@@ -12,6 +12,9 @@
   <sql id="Base_Column_List" >
     uuid, alias, create_time, name, pid,version
   </sql>
+  <sql id="Base_Column_List2" >
+    p.uuid, p.alias, p.create_time, p.name, p.pid,p.version
+  </sql>
   <select id="findByName" resultType="Permission" parameterType="java.lang.String">
     select
     <include refid="Base_Column_List" />
@@ -23,10 +26,11 @@
     <include refid="Base_Column_List" />
     from sys_permission
     where pid = #{pid}
+    order by create_time asc
   </select>
   <select id="findByRoles" resultMap="BaseResultMap" parameterType="java.util.List">
     select
-    <include refid="Base_Column_List" />
+    <include refid="Base_Column_List2" />
     from sys_permission p
     where 1=1
     and p.uuid in (
@@ -37,16 +41,18 @@
       #{item.uuid}
     </foreach>
     )
+    order by p.create_time asc
   </select>
   <select id="findByRoleId" resultMap="BaseResultMap" parameterType="java.lang.String">
     select
-    <include refid="Base_Column_List" />
+    <include refid="Base_Column_List2" />
     from sys_permission p
     where 1=1
     and p.uuid in (
     select rp.permission_id from sys_roles_permissions rp
     where rp.role_id =#{roleid}
     )
+    order by p.create_time asc
   </select>
     <select id="findWithPage" resultMap="BaseResultMap">
         SELECT

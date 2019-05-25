@@ -125,8 +125,8 @@ public class RoleServiceImpl extends BaseServiceImpl<RoleDao,Role> implements Ro
         Role role = new Role();
         role.setName(name);
         pageInfo = super.findWithPage(pageInfo, Wrappers.<Role>lambdaQuery()
-                                      .eq(StringUtils.isNotBlank(role.getName()),Role::getName,role.getName())
-                                        .orderByDesc(Role::getCreateTime));
+                                      .like(StringUtils.isNotBlank(role.getName()),Role::getName,role.getName())
+                                        .orderByAsc(Role::getCreateTime));
         return PageUtil.toPage(roleDtoAndEntityMapper.toDto(pageInfo.getRecords()),pageInfo.getRecords().size());
     }
 

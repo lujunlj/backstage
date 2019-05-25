@@ -97,7 +97,7 @@ public class PictureServiceImpl extends BaseServiceImpl<PictureDao, Picture> imp
     @Override
     public Object queryAll(Picture picture, Page<Picture> pageInfo) {
         pageInfo = super.findWithPage(pageInfo, Wrappers.<Picture>lambdaQuery()
-                            .eq(StringUtils.isNotBlank(picture.getFilename()),Picture::getFilename,picture)
+                            .like(StringUtils.isNotBlank(picture.getFilename()),Picture::getFilename,picture)
                             .orderByDesc(Picture::getCreateTime));
         return PageUtil.toPage(pageInfo);
     }

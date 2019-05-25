@@ -33,6 +33,7 @@ spring:
       max-lifetime: 1800000
       connection-timeout: 30000
       connection-test-query: select 1
+
   redis:
       #数据库索引
       database: 0

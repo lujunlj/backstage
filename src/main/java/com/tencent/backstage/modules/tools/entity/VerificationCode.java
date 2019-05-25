@@ -38,7 +38,7 @@ public class VerificationCode extends Model<VerificationCode> {
 
     @ApiModelProperty(value = "状态：1有效、0过期")
     @TableField("status")
-    private Boolean status;
+    private Boolean status = true;
 
     @ApiModelProperty(value = "验证码类型：email或者短信")
     @TableField("type")

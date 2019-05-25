@@ -2,21 +2,21 @@
 <!-- 分级别异步文件日志输出配置 -->
 <configuration>
     <!-- 应用名 -->
-    <property name="appname" value="StagePro"></property>
-    <!-- sql打印所需路径 -->
-    <property name="sqlpackage" value="com.tencent.mapper.dao.**"></property>
-    <!-- sql打印日志级别 -->
-    <property name="sqlloglevel" value="DEBUG"></property>
+    <property name="appname" value="StagePro"/>
+<!--    &lt;!&ndash; sql打印所需路径 &ndash;&gt;-->
+<!--    <property name="sqlpackage" value="com.tencent.backstage.modules.*.dao"/>-->
+<!--    &lt;!&ndash; sql打印日志级别 &ndash;&gt;-->
+<!--    <property name="sqlloglevel" value="DEBUG"/>-->
     <!-- 日志级别 -->
-    <property name="logLevel" value="INFO"></property>
+    <property name="logLevel" value="INFO"/>
     <!-- 日志地址 -->
-    <property name="logPath" value="./logs"></property>
+    <property name="logPath" value="./logs"/>
     <!-- 最大保存时间 -->
     <property name="maxHistory" value="30"/>
     <!-- 异步缓冲队列的深度,该值会影响性能.默认值为256 -->
-    <property name="queueSize" value="256"></property>
+    <property name="queueSize" value="256"/>
     <!--日志文件名前缀-->
-    <property name="name" value="stage-prod"></property>
+    <property name="name" value="stage-prod"/>
 
 
     <!--用来设置上下文名称 用于区分不同应用程序的记录,一旦设置，不能修改。-->
@@ -24,8 +24,10 @@
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>
+            <pattern>%red(%d{yyyy-MM-dd HH:mm:ss}) %-4relative %green([%thread]) %highlight(%-5level) %boldMagenta(%logger{35}) - %boldYellow(%msg %n)</pattern>
         </encoder>
+        <!--添加我们自定义的filter-->
+        <filter class="com.tencent.backstage.config.monitor.LogFilter"/>
     </appender>
 
     <appender name="FILE_DEBUG"
@@ -126,8 +128,10 @@
         <queueSize>${queueSize}</queueSize>
         <appender-ref ref="FILE_ERROR"/>
     </appender>
-    <!--配置mybatis sql 日志-->
-    <logger name="${sqlpackage}" level="${sqlloglevel}" />
+
+
+<!--    &lt;!&ndash;配置mybatis sql 日志  配置问题 见dev &ndash;&gt;-->
+<!--    <logger name="${sqlpackage}" level="${sqlloglevel}" />-->
 
     <root level="${logLevel}">
         <!-- appender referenced after it is defined -->
@@ -137,4 +141,7 @@
         <appender-ref ref="ASYNC_LOG_WARN"/>
         <appender-ref ref="ASYNC_LOG_ERROR"/>
     </root>
+
+
+
 </configuration>

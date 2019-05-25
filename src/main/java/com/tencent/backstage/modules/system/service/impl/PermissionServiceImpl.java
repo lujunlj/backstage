@@ -90,7 +90,7 @@ public class PermissionServiceImpl extends BaseServiceImpl<PermissionDao,Permiss
                         map.put("id",permission.getUuid());
                         map.put("label",permission.getAlias());
                         if(permissionList!=null && permissionList.size()!=0){
-                            map.put("childrens",getPermissionTree(permissionList));
+                            map.put("children",getPermissionTree(permissionList));
                         }
                         list.add(map);
                     }
@@ -136,8 +136,8 @@ public class PermissionServiceImpl extends BaseServiceImpl<PermissionDao,Permiss
         Permission permission = new Permission();
         permission.setName(name);
         List<Permission> permissionList = permissionDao.findAll(Wrappers.<Permission>lambdaQuery()
-                .eq(StringUtils.isNotBlank(permission.getName()),Permission::getName,permission.getName())
-                .orderByDesc(Permission::getCreateTime));
+                .like(StringUtils.isNotBlank(permission.getName()),Permission::getName,permission.getName())
+                .orderByAsc(Permission::getCreateTime));
         return permissionDtoAndEntityMapper.toDto(permissionList);
     }
 }

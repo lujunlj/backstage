@@ -9,6 +9,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -16,6 +17,7 @@ import java.net.UnknownHostException;
 @Slf4j
 @SpringBootApplication
 @EnableTransactionManagement(proxyTargetClass = true)
+@EnableWebSocketMessageBroker
 @MapperScan("com.tencent.backstage.modules.*.dao")
 public class BackstageApplication {
     public static void main(String[] args)throws UnknownHostException {
