@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tencent.backstage.modules.quartz.dao.QuartzLogDao">
+
+    <!-- 通用查询映射结果 -->
+<resultMap id="BaseResultMap" type="com.tencent.backstage.modules.quartz.entity.QuartzLog">
+    <id column="uuid" property="uuid" />
+    <result column="baen_name" property="baenName" />
+    <result column="create_time" property="createTime" />
+    <result column="cron_expression" property="cronExpression" />
+    <result column="exception_detail" property="exceptionDetail" />
+    <result column="is_success" property="isSuccess" />
+    <result column="job_name" property="jobName" />
+    <result column="method_name" property="methodName" />
+    <result column="params" property="params" />
+    <result column="time" property="time" />
+    <result column="del_flag" property="delFlag" />
+    <result column="version" property="version" />
+</resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        uuid, baen_name, create_time, cron_expression, exception_detail, is_success, job_name, method_name, params, time, del_flag, version
+    </sql>
+    <select id="findWithPage" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        from quartz_log
+        ${ew.customSqlSegment}
+    </select>
+</mapper>

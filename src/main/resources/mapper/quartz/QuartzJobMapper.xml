@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tencent.backstage.modules.quartz.dao.QuartzJobDao">
+
+    <!-- 通用查询映射结果 -->
+<resultMap id="BaseResultMap" type="com.tencent.backstage.modules.quartz.entity.QuartzJob">
+    <id column="uuid" property="uuid" />
+    <result column="bean_name" property="beanName" />
+    <result column="cron_expression" property="cronExpression" />
+    <result column="is_pause" property="isPause" />
+    <result column="job_name" property="jobName" />
+    <result column="method_name" property="methodName" />
+    <result column="params" property="params" />
+    <result column="remark" property="remark" />
+    <result column="update_time" property="updateTime" />
+    <result column="del_flag" property="delFlag" />
+    <result column="version" property="version" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+</resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        uuid, bean_name, cron_expression, is_pause, job_name, method_name, params, remark, update_time, del_flag, version,create_time
+    </sql>
+    <select id="findWithPage" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        from quartz_job
+        ${ew.customSqlSegment}
+    </select>
+    <select id="findByIsPauseIsFalse" resultType="com.tencent.backstage.modules.quartz.entity.QuartzJob">
+        SELECT
+        <include refid="Base_Column_List"/>
+        from quartz_job
+        where is_pause = 0
+    </select>
+</mapper>
