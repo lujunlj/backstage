@@ -71,7 +71,7 @@
         order by r.create_time asc
     </select>
     <delete id="removeRoleMenu" >
-        delete from sys_roles_menus rm where rm.role_id =#{roleid} and rm.menu_id =#{menuid}
+        delete from sys_roles_menus  where role_id =#{roleid} and menu_id =#{menuid}
     </delete>
 
     <select id="findWithPage" resultMap="BaseResultMap">

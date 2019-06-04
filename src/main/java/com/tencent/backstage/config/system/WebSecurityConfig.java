@@ -12,6 +12,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.core.GrantedAuthorityDefaults;
@@ -84,9 +85,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 ).permitAll()
                 .antMatchers( HttpMethod.POST,"/auth/"+loginPath).permitAll()
                 .antMatchers("/websocket/**").permitAll()
-                // 支付宝回调
-                .antMatchers("/api/aliPay/return").anonymous()
-                .antMatchers("/api/aliPay/notify").anonymous()
+//                // 支付宝回调
+//                .antMatchers("/api/aliPay/return").anonymous()
+//                .antMatchers("/api/aliPay/notify").anonymous()
 
                 // 系统监控
                 .antMatchers("/actuator/**").anonymous()
@@ -102,7 +103,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/test/**").anonymous()
                 .antMatchers(HttpMethod.OPTIONS, "/**").anonymous()
 
-                .antMatchers("/druid/**").permitAll()
+//              .antMatchers("/druid/**").permitAll()
                 // 所有请求都需要认证
                 .anyRequest().authenticated()
                 // 防止iframe 造成跨域

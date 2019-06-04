@@ -1,497 +1,265 @@
-2019-05-25 09:36:07 1150 [main] INFO  c.t.backstage.BackstageApplication - Starting BackstageApplication on DESKTOP-SDM24L1 with PID 18988 (D:\github\backstage\target\classes started by songguo in D:\github\backstage) 
-2019-05-25 09:36:07 1157 [main] INFO  c.t.backstage.BackstageApplication - The following profiles are active: dev 
-2019-05-25 09:36:10 3871 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode! 
-2019-05-25 09:36:10 3873 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode. 
-2019-05-25 09:36:10 3965 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 77ms. Found 0 repository interfaces. 
-2019-05-25 09:36:11 4317 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$df0d3502] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 09:36:11 4407 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 09:36:11 4410 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7efa3f63' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 09:36:11 4414 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$3e1d7b4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 09:36:11 4420 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 09:36:11 4449 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.tencent.backstage.common.redis.RedisConfig$$EnhancerBySpringCGLIB$$ac4f1b61] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 09:36:11 4817 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext 
-2019-05-25 09:36:11 4817 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3599 ms 
-2019-05-25 09:36:11 5119 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------配置[typeAliasesPackage,mapperLocations]START------------------------------------ 
-2019-05-25 09:36:11 5119 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------com.tencent.backstage.modules.**.entity---------------------------------------------------- 
-2019-05-25 09:36:11 5159 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------配置[typeAliasesPackage,mapperLocations]END-------------------------------------- 
-2019-05-25 09:36:11 5163 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting... 
-2019-05-25 09:36:12 5289 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed. 
-2019-05-25 09:36:13 6270 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'clientInboundChannelExecutor' 
-2019-05-25 09:36:13 6281 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'clientOutboundChannelExecutor' 
-2019-05-25 09:36:13 7028 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3386ed8, org.springframework.security.web.context.SecurityContextPersistenceFilter@18483b8b, org.springframework.security.web.header.HeaderWriterFilter@69d667a5, org.springframework.web.filter.CorsFilter@43c39321, org.springframework.security.web.authentication.logout.LogoutFilter@3c346c45, com.tencent.backstage.common.jwt.JwtAuthorizationTokenFilter@113dcaf8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@965bcbc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@48b3b1b8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@727453a3, org.springframework.security.web.session.SessionManagementFilter@8f4b803, org.springframework.security.web.access.ExceptionTranslationFilter@1e6d30c0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6df2a206] 
-2019-05-25 09:36:13 7103 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'messageBrokerTaskScheduler' 
-2019-05-25 09:36:13 7157 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'brokerChannelExecutor' 
-2019-05-25 09:36:14 7861 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Starting... 
-2019-05-25 09:36:14 7862 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]] 
-2019-05-25 09:36:14 7863 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Started. 
-2019-05-25 09:36:14 7934 [main] INFO  org.xnio - XNIO version 3.3.8.Final 
-2019-05-25 09:36:14 7945 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.3.8.Final 
-2019-05-25 09:36:14 8006 [main] INFO  o.s.b.w.e.u.UndertowServletWebServer - Undertow started on port(s) 8090 (http) with context path '/njbj' 
-2019-05-25 09:36:14 8009 [main] INFO  c.t.backstage.BackstageApplication - Started BackstageApplication in 7.807 seconds (JVM running for 8.964) 
-2019-05-25 09:36:14 8012 [main] INFO  c.t.b.c.system.VisitsInitialization - -------------------------------------- 初始化站点统计，如果存在今日统计则跳过 -------------------------------------- 
-2019-05-25 09:36:15 8346 [main] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 09:36:15 8411 [main] INFO  c.t.b.c.system.VisitsInitialization - -------------------------------------- 初始化站点统计完成 ------------------------------------------------------- 
-2019-05-25 09:36:15 8412 [main] INFO  c.t.backstage.BackstageApplication - 
+2019-06-04 14:28:04 1617 [main] INFO  c.t.backstage.BackstageApplication - Starting BackstageApplication on DESKTOP-SDM24L1 with PID 17936 (D:\github\backstage\target\classes started by songguo in D:\github\backstage) 
+2019-06-04 14:28:04 1696 [main] INFO  c.t.backstage.BackstageApplication - The following profiles are active: dev 
+2019-06-04 14:28:09 6846 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode! 
+2019-06-04 14:28:09 6849 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode. 
+2019-06-04 14:28:10 7019 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 135ms. Found 0 repository interfaces. 
+2019-06-04 14:28:10 7781 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$a5068e37] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019-06-04 14:28:11 7960 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019-06-04 14:28:11 7965 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@718f805a' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019-06-04 14:28:11 7967 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$c9db30e9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019-06-04 14:28:11 7976 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019-06-04 14:28:11 8019 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.tencent.backstage.common.redis.RedisConfig$$EnhancerBySpringCGLIB$$72487496] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019-06-04 14:28:11 8584 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext 
+2019-06-04 14:28:11 8584 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 6434 ms 
+2019-06-04 14:28:12 9096 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------配置[typeAliasesPackage,mapperLocations]START------------------------------------ 
+2019-06-04 14:28:12 9096 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------com.tencent.backstage.modules.**.entity---------------------------------------------------- 
+2019-06-04 14:28:12 9215 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------配置[typeAliasesPackage,mapperLocations]END-------------------------------------- 
+2019-06-04 14:28:12 9220 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting... 
+2019-06-04 14:28:12 9573 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed. 
+2019-06-04 14:28:14 11211 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'clientInboundChannelExecutor' 
+2019-06-04 14:28:14 11241 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'clientOutboundChannelExecutor' 
+2019-06-04 14:28:15 12046 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor 
+2019-06-04 14:28:15 12068 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl 
+2019-06-04 14:28:15 12069 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.1 created. 
+2019-06-04 14:28:15 12070 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized. 
+2019-06-04 14:28:15 12072 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.1) 'QuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+ 
+2019-06-04 14:28:15 12072 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'QuartzScheduler' initialized from an externally provided properties instance. 
+2019-06-04 14:28:15 12073 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.1 
+2019-06-04 14:28:15 12073 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: com.tencent.backstage.modules.quartz.config.QuartzConfig$QuartzJobFactory@37e55819 
+2019-06-04 14:28:15 12074 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler QuartzScheduler_$_NON_CLUSTERED started. 
+2019-06-04 14:28:15 12794 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@38e7860c, org.springframework.security.web.context.SecurityContextPersistenceFilter@5ad0c70a, org.springframework.security.web.header.HeaderWriterFilter@6de33fde, org.springframework.web.filter.CorsFilter@afee63, org.springframework.security.web.authentication.logout.LogoutFilter@64665781, com.tencent.backstage.common.jwt.JwtAuthorizationTokenFilter@d70e9a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@75805562, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3006bfb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@62158991, org.springframework.security.web.session.SessionManagementFilter@59e0d521, org.springframework.security.web.access.ExceptionTranslationFilter@78b9155e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6ac9b66b] 
+2019-06-04 14:28:15 12843 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'messageBrokerTaskScheduler' 
+2019-06-04 14:28:16 12956 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'brokerChannelExecutor' 
+2019-06-04 14:28:17 13926 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor 
+2019-06-04 14:28:17 13927 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl 
+2019-06-04 14:28:17 13927 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.1 created. 
+2019-06-04 14:28:17 13928 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized. 
+2019-06-04 14:28:17 13928 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+ 
+2019-06-04 14:28:17 13928 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance. 
+2019-06-04 14:28:17 13928 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.1 
+2019-06-04 14:28:17 13928 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@751bb780 
+2019-06-04 14:28:17 14063 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Starting... 
+2019-06-04 14:28:17 14064 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]] 
+2019-06-04 14:28:17 14065 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Started. 
+2019-06-04 14:28:17 14065 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now 
+2019-06-04 14:28:17 14065 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started. 
+2019-06-04 14:28:17 14165 [main] INFO  org.xnio - XNIO version 3.3.8.Final 
+2019-06-04 14:28:17 14198 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.3.8.Final 
+2019-06-04 14:28:17 14289 [main] INFO  o.s.b.w.e.u.UndertowServletWebServer - Undertow started on port(s) 8090 (http) with context path '/njbj' 
+2019-06-04 14:28:17 14296 [main] INFO  c.t.backstage.BackstageApplication - Started BackstageApplication in 13.936 seconds (JVM running for 16.95) 
+2019-06-04 14:28:17 14299 [main] INFO  c.t.b.c.system.VisitsInitialization - -------------------------------------- 初始化站点统计，如果存在今日统计则跳过 -------------------------------------- 
+2019-06-04 14:28:17 14876 [main] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:28:18 14977 [main] INFO  c.t.b.c.system.VisitsInitialization - -------------------------------------- 初始化站点统计完成 ------------------------------------------------------- 
+2019-06-04 14:28:18 14977 [main] INFO  c.t.b.m.quartz.config.JobRunner - --------------------注入定时任务--------------------- 
+2019-06-04 14:28:18 15020 [main] INFO  c.t.b.m.quartz.config.JobRunner - --------------------定时任务注入完成--------------------- 
+2019-06-04 14:28:18 15021 [main] INFO  c.t.backstage.BackstageApplication - 
 ----------------------------------------------------------
 	Application T-Boot is running! Access URLs:
 	Local: 		http://localhost:8090/njbj/
-	External: 	http://192.168.0.7:8090/njbj/
-	swagger-ui: 	http://192.168.0.7:8090/njbj/swagger-ui.html
-	Doc: 		http://192.168.0.7:8090/njbj/doc.html
+	External: 	http://192.168.12.22:8090/njbj/
+	swagger-ui: 	http://192.168.12.22:8090/njbj/swagger-ui.html
+	Doc: 		http://192.168.12.22:8090/njbj/doc.html
 ---------------------------------------------------------- 
-2019-05-25 09:37:13 67156 [MessageBroker-1] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0] 
-2019-05-25 09:59:51 1425076 [Thread-16] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Stopping... 
-2019-05-25 09:59:51 1425077 [Thread-16] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]] 
-2019-05-25 09:59:51 1425077 [Thread-16] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Stopped. 
-2019-05-25 09:59:51 1425087 [Thread-16] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'brokerChannelExecutor' 
-2019-05-25 09:59:51 1425088 [Thread-16] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'messageBrokerTaskScheduler' 
-2019-05-25 09:59:51 1425100 [Thread-16] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'clientOutboundChannelExecutor' 
-2019-05-25 09:59:51 1425100 [Thread-16] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'clientInboundChannelExecutor' 
-2019-05-25 09:59:51 1425102 [Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated... 
-2019-05-25 09:59:51 1425118 [Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed. 
-2019-05-25 10:13:19 975  [main] INFO  c.t.backstage.BackstageApplication - Starting BackstageApplication on DESKTOP-SDM24L1 with PID 21012 (D:\github\backstage\target\classes started by songguo in D:\github\backstage) 
-2019-05-25 10:13:19 978  [main] INFO  c.t.backstage.BackstageApplication - The following profiles are active: dev 
-2019-05-25 10:13:21 2190 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode! 
-2019-05-25 10:13:21 2193 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode. 
-2019-05-25 10:13:21 2282 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 58ms. Found 0 repository interfaces. 
-2019-05-25 10:13:21 2772 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$f459e424] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:13:21 2916 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:13:21 2920 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@f1266c6' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:13:21 2921 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$192e86d6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:13:21 2927 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:13:21 2957 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.tencent.backstage.common.redis.RedisConfig$$EnhancerBySpringCGLIB$$c19bca83] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:13:22 3361 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext 
-2019-05-25 10:13:22 3361 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2259 ms 
-2019-05-25 10:13:22 3634 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------配置[typeAliasesPackage,mapperLocations]START------------------------------------ 
-2019-05-25 10:13:22 3634 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------com.tencent.backstage.modules.**.entity---------------------------------------------------- 
-2019-05-25 10:13:22 3654 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------配置[typeAliasesPackage,mapperLocations]END-------------------------------------- 
-2019-05-25 10:13:22 3658 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting... 
-2019-05-25 10:13:22 3835 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed. 
-2019-05-25 10:13:23 4794 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'clientInboundChannelExecutor' 
-2019-05-25 10:13:23 4804 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'clientOutboundChannelExecutor' 
-2019-05-25 10:13:24 5693 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@28f90752, org.springframework.security.web.context.SecurityContextPersistenceFilter@1d585fb, org.springframework.security.web.header.HeaderWriterFilter@11c3d22f, org.springframework.web.filter.CorsFilter@638afcaa, org.springframework.security.web.authentication.logout.LogoutFilter@1c0e4262, com.tencent.backstage.common.jwt.JwtAuthorizationTokenFilter@6e8f2094, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1c7843c3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7079f8f0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4f20b022, org.springframework.security.web.session.SessionManagementFilter@7d8f2eec, org.springframework.security.web.access.ExceptionTranslationFilter@3fef1e6b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@92e2c93] 
-2019-05-25 10:13:24 5713 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'messageBrokerTaskScheduler' 
-2019-05-25 10:13:24 5784 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'brokerChannelExecutor' 
-2019-05-25 10:13:25 6606 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Starting... 
-2019-05-25 10:13:25 6607 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]] 
-2019-05-25 10:13:25 6608 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Started. 
-2019-05-25 10:13:25 6639 [main] INFO  org.xnio - XNIO version 3.3.8.Final 
-2019-05-25 10:13:25 6650 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.3.8.Final 
-2019-05-25 10:13:25 6764 [main] INFO  o.s.b.w.e.u.UndertowServletWebServer - Undertow started on port(s) 8090 (http) with context path '/njbj' 
-2019-05-25 10:13:25 6767 [main] INFO  c.t.backstage.BackstageApplication - Started BackstageApplication in 6.485 seconds (JVM running for 8.101) 
-2019-05-25 10:13:25 6769 [main] INFO  c.t.b.c.system.VisitsInitialization - -------------------------------------- 初始化站点统计，如果存在今日统计则跳过 -------------------------------------- 
-2019-05-25 10:13:25 6953 [main] INFO  c.t.b.c.system.VisitsInitialization - -------------------------------------- 初始化站点统计完成 ------------------------------------------------------- 
-2019-05-25 10:13:25 6954 [main] INFO  c.t.backstage.BackstageApplication - 
+2019-06-04 14:29:16 72952 [MessageBroker-1] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0] 
+2019-06-04 14:33:32 329346 [XNIO-1 task-1] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2019-06-04 14:33:32 329346 [XNIO-1 task-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2019-06-04 14:33:32 329359 [XNIO-1 task-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 13 ms 
+2019-06-04 14:33:33 330248 [XNIO-1 task-2] INFO  c.t.b.m.s.s.JwtPermissionService - --------------------loadPermissionByUser:admin--------------------- 
+2019-06-04 14:33:34 331058 [XNIO-1 task-2] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:33:34 331314 [XNIO-1 task-4] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:33:35 331954 [XNIO-1 task-8] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:33:35 331955 [XNIO-1 task-9] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:33:35 331960 [XNIO-1 task-10] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:33:35 332036 [XNIO-1 task-8] INFO  c.t.b.c.orm.MyMetaObjectHandler - start update fill .... 
+2019-06-04 14:35:26 443522 [XNIO-1 task-16] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:35:26 443522 [XNIO-1 task-14] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:35:26 443523 [XNIO-1 task-15] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:35:26 443613 [XNIO-1 task-14] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:35:26 443741 [XNIO-1 task-16] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:35:26 443812 [XNIO-1 task-15] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:35:40 457297 [XNIO-1 task-20] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:35:40 457303 [XNIO-1 task-22] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:35:40 457319 [XNIO-1 task-21] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:35:40 457359 [XNIO-1 task-22] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:35:50 467030 [XNIO-1 task-24] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:35:50 467046 [XNIO-1 task-24] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:35:50 467118 [XNIO-1 task-26] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:35:50 467134 [XNIO-1 task-26] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:36:27 504632 [XNIO-1 task-28] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:36:28 504975 [XNIO-1 task-30] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:36:28 505211 [XNIO-1 task-32] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:36:28 505276 [XNIO-1 task-32] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:36:35 512617 [XNIO-1 task-34] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:36:35 512640 [XNIO-1 task-36] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:36:35 512815 [XNIO-1 task-38] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:36:35 512821 [XNIO-1 task-38] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:36:47 524696 [XNIO-1 task-40] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:36:47 524781 [XNIO-1 task-40] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:38:06 603773 [XNIO-1 task-46] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:38:06 603779 [XNIO-1 task-46] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:38:12 609785 [XNIO-1 task-48] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:38:21 618418 [XNIO-1 task-50] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:38:21 618425 [XNIO-1 task-50] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:38:33 630258 [XNIO-1 task-52] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:38:33 630521 [XNIO-1 task-52] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:42:54 891120 [XNIO-1 task-54] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:44:33 990497 [XNIO-1 task-54] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:44:33 990747 [Thread-29] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Stopping... 
+2019-06-04 14:44:33 990748 [Thread-29] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]] 
+2019-06-04 14:44:33 990748 [Thread-29] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Stopped. 
+2019-06-04 14:44:33 990751 [Thread-29] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused. 
+2019-06-04 14:44:33 990753 [Thread-29] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler 
+2019-06-04 14:44:33 990753 [Thread-29] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down. 
+2019-06-04 14:44:33 990753 [Thread-29] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused. 
+2019-06-04 14:44:33 990754 [Thread-29] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete. 
+2019-06-04 14:44:33 990758 [Thread-29] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'brokerChannelExecutor' 
+2019-06-04 14:44:33 990759 [Thread-29] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'messageBrokerTaskScheduler' 
+2019-06-04 14:44:33 990766 [Thread-29] INFO  org.quartz.core.QuartzScheduler - Scheduler QuartzScheduler_$_NON_CLUSTERED shutting down. 
+2019-06-04 14:44:33 990766 [Thread-29] INFO  org.quartz.core.QuartzScheduler - Scheduler QuartzScheduler_$_NON_CLUSTERED paused. 
+2019-06-04 14:44:33 990766 [Thread-29] INFO  org.quartz.core.QuartzScheduler - Scheduler QuartzScheduler_$_NON_CLUSTERED shutdown complete. 
+2019-06-04 14:44:33 990767 [Thread-29] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'clientOutboundChannelExecutor' 
+2019-06-04 14:44:33 990767 [Thread-29] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'clientInboundChannelExecutor' 
+2019-06-04 14:44:33 990771 [Thread-29] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated... 
+2019-06-04 14:44:33 990791 [Thread-29] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed. 
+2019-06-04 14:44:33 990806 [Thread-29] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet' 
+2019-06-04 14:45:15 1960 [main] INFO  c.t.backstage.BackstageApplication - Starting BackstageApplication on DESKTOP-SDM24L1 with PID 6364 (D:\github\backstage\target\classes started by songguo in D:\github\backstage) 
+2019-06-04 14:45:15 2069 [main] INFO  c.t.backstage.BackstageApplication - The following profiles are active: dev 
+2019-06-04 14:45:20 6866 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode! 
+2019-06-04 14:45:20 6869 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode. 
+2019-06-04 14:45:20 7012 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 106ms. Found 0 repository interfaces. 
+2019-06-04 14:45:21 7799 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$37987928] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019-06-04 14:45:21 7992 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019-06-04 14:45:21 7996 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@59c04bee' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019-06-04 14:45:21 7998 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$5c6d1bda] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019-06-04 14:45:21 8005 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019-06-04 14:45:21 8067 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.tencent.backstage.common.redis.RedisConfig$$EnhancerBySpringCGLIB$$4da5f87] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019-06-04 14:45:22 8641 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext 
+2019-06-04 14:45:22 8641 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 6186 ms 
+2019-06-04 14:45:22 9029 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------配置[typeAliasesPackage,mapperLocations]START------------------------------------ 
+2019-06-04 14:45:22 9029 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------com.tencent.backstage.modules.**.entity---------------------------------------------------- 
+2019-06-04 14:45:22 9133 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------配置[typeAliasesPackage,mapperLocations]END-------------------------------------- 
+2019-06-04 14:45:22 9139 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting... 
+2019-06-04 14:45:23 9327 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed. 
+2019-06-04 14:45:24 10645 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'clientInboundChannelExecutor' 
+2019-06-04 14:45:24 10658 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'clientOutboundChannelExecutor' 
+2019-06-04 14:45:24 11178 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor 
+2019-06-04 14:45:24 11195 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl 
+2019-06-04 14:45:24 11195 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.1 created. 
+2019-06-04 14:45:24 11197 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized. 
+2019-06-04 14:45:24 11198 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.1) 'QuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+ 
+2019-06-04 14:45:24 11198 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'QuartzScheduler' initialized from an externally provided properties instance. 
+2019-06-04 14:45:24 11198 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.1 
+2019-06-04 14:45:24 11199 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: com.tencent.backstage.modules.quartz.config.QuartzConfig$QuartzJobFactory@35010a6b 
+2019-06-04 14:45:24 11200 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler QuartzScheduler_$_NON_CLUSTERED started. 
+2019-06-04 14:45:25 12015 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@342723a3, org.springframework.security.web.context.SecurityContextPersistenceFilter@106459d9, org.springframework.security.web.header.HeaderWriterFilter@1fbd5e0, org.springframework.web.filter.CorsFilter@3e74fd84, org.springframework.security.web.authentication.logout.LogoutFilter@2558f65c, com.tencent.backstage.common.jwt.JwtAuthorizationTokenFilter@45984654, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@23c05889, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@a55e82a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@f3876ef, org.springframework.security.web.session.SessionManagementFilter@135064ea, org.springframework.security.web.access.ExceptionTranslationFilter@7bdb4f17, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@20231384] 
+2019-06-04 14:45:25 12067 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'messageBrokerTaskScheduler' 
+2019-06-04 14:45:25 12184 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'brokerChannelExecutor' 
+2019-06-04 14:45:26 13050 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor 
+2019-06-04 14:45:26 13051 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl 
+2019-06-04 14:45:26 13051 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.1 created. 
+2019-06-04 14:45:26 13052 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized. 
+2019-06-04 14:45:26 13052 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+ 
+2019-06-04 14:45:26 13052 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance. 
+2019-06-04 14:45:26 13052 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.1 
+2019-06-04 14:45:26 13053 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@5831989d 
+2019-06-04 14:45:26 13187 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Starting... 
+2019-06-04 14:45:26 13187 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]] 
+2019-06-04 14:45:26 13189 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Started. 
+2019-06-04 14:45:26 13189 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now 
+2019-06-04 14:45:26 13189 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started. 
+2019-06-04 14:45:26 13225 [main] INFO  org.xnio - XNIO version 3.3.8.Final 
+2019-06-04 14:45:26 13244 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.3.8.Final 
+2019-06-04 14:45:27 13331 [main] INFO  o.s.b.w.e.u.UndertowServletWebServer - Undertow started on port(s) 8090 (http) with context path '/njbj' 
+2019-06-04 14:45:27 13334 [main] INFO  c.t.backstage.BackstageApplication - Started BackstageApplication in 12.752 seconds (JVM running for 14.459) 
+2019-06-04 14:45:27 13337 [main] INFO  c.t.b.c.system.VisitsInitialization - -------------------------------------- 初始化站点统计，如果存在今日统计则跳过 -------------------------------------- 
+2019-06-04 14:45:27 13481 [main] INFO  c.t.b.c.system.VisitsInitialization - -------------------------------------- 初始化站点统计完成 ------------------------------------------------------- 
+2019-06-04 14:45:27 13482 [main] INFO  c.t.b.m.quartz.config.JobRunner - --------------------注入定时任务--------------------- 
+2019-06-04 14:45:27 13502 [main] INFO  c.t.b.m.quartz.config.JobRunner - --------------------定时任务注入完成--------------------- 
+2019-06-04 14:45:27 13503 [main] INFO  c.t.backstage.BackstageApplication - 
 ----------------------------------------------------------
 	Application T-Boot is running! Access URLs:
 	Local: 		http://localhost:8090/njbj/
-	External: 	http://192.168.0.7:8090/njbj/
-	swagger-ui: 	http://192.168.0.7:8090/njbj/swagger-ui.html
-	Doc: 		http://192.168.0.7:8090/njbj/doc.html
+	External: 	http://192.168.12.22:8090/njbj/
+	swagger-ui: 	http://192.168.12.22:8090/njbj/swagger-ui.html
+	Doc: 		http://192.168.12.22:8090/njbj/doc.html
 ---------------------------------------------------------- 
-2019-05-25 10:13:42 23592 [XNIO-1 task-1] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet' 
-2019-05-25 10:13:42 23592 [XNIO-1 task-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
-2019-05-25 10:13:42 23627 [XNIO-1 task-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 35 ms 
-2019-05-25 10:13:43 24205 [XNIO-1 task-2] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 10:13:46 27960 [XNIO-1 task-3] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 10:13:47 28162 [XNIO-1 task-5] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:13:47 28585 [XNIO-1 task-9] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:13:47 28599 [XNIO-1 task-11] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:13:47 28599 [XNIO-1 task-10] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:13:47 28615 [XNIO-1 task-9] INFO  c.t.b.c.orm.MyMetaObjectHandler - start update fill .... 
-2019-05-25 10:13:50 31645 [XNIO-1 task-15] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:13:50 31645 [XNIO-1 task-14] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:13:54 35269 [XNIO-1 task-17] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:13:56 37971 [XNIO-1 task-18] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:14:08 49723 [XNIO-1 task-20] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:14:10 51511 [XNIO-1 task-21] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:14:10 51629 [XNIO-1 task-23] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:14:10 52033 [XNIO-1 task-23] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 10:14:16 57659 [XNIO-1 task-25] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 10:14:16 57800 [XNIO-1 task-27] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:14:16 58033 [XNIO-1 task-31] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:14:16 58037 [XNIO-1 task-30] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:14:24 65781 [MessageBroker-1] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0] 
-2019-05-25 10:14:26 68063 [XNIO-1 task-33] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:14:27 68896 [XNIO-1 task-34] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:14:28 69860 [XNIO-1 task-35] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:14:29 70663 [XNIO-1 task-36] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:14:44 85911 [XNIO-1 task-38] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:14:45 86343 [XNIO-1 task-38] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 10:16:45 206943 [XNIO-1 task-40] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:16:45 206956 [XNIO-1 task-40] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 10:17:26 247957 [XNIO-1 task-42] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:17:26 247967 [XNIO-1 task-42] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 10:20:13 414315 [pool-3-thread-1] INFO  c.t.b.c.orm.MyMetaObjectHandler - start update fill .... 
-2019-05-25 10:21:45 506963 [pool-4-thread-1] INFO  c.t.b.c.orm.MyMetaObjectHandler - start update fill .... 
-2019-05-25 10:22:26 547979 [pool-5-thread-1] INFO  c.t.b.c.orm.MyMetaObjectHandler - start update fill .... 
-2019-05-25 10:33:48 1229456 [Thread-14] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Stopping... 
-2019-05-25 10:33:48 1229456 [Thread-14] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]] 
-2019-05-25 10:33:48 1229456 [Thread-14] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Stopped. 
-2019-05-25 10:33:48 1229458 [Thread-14] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'brokerChannelExecutor' 
-2019-05-25 10:33:48 1229459 [Thread-14] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'messageBrokerTaskScheduler' 
-2019-05-25 10:33:48 1229464 [Thread-14] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'clientOutboundChannelExecutor' 
-2019-05-25 10:33:48 1229464 [Thread-14] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'clientInboundChannelExecutor' 
-2019-05-25 10:33:48 1229466 [Thread-14] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated... 
-2019-05-25 10:33:48 1229474 [Thread-14] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed. 
-2019-05-25 10:33:48 1229477 [Thread-14] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet' 
-2019-05-25 10:33:56 1040 [main] INFO  c.t.backstage.BackstageApplication - Starting BackstageApplication on DESKTOP-SDM24L1 with PID 26812 (D:\github\backstage\target\classes started by songguo in D:\github\backstage) 
-2019-05-25 10:33:56 1044 [main] INFO  c.t.backstage.BackstageApplication - The following profiles are active: dev 
-2019-05-25 10:33:57 2144 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode! 
-2019-05-25 10:33:57 2146 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode. 
-2019-05-25 10:33:57 2215 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 51ms. Found 0 repository interfaces. 
-2019-05-25 10:33:58 2583 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$c7535734] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:33:58 2685 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:33:58 2689 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6361b799' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:33:58 2690 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$ec27f9e6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:33:58 2696 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:33:58 2728 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.tencent.backstage.common.redis.RedisConfig$$EnhancerBySpringCGLIB$$94953d93] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:33:58 3057 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext 
-2019-05-25 10:33:58 3058 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1928 ms 
-2019-05-25 10:33:58 3313 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------配置[typeAliasesPackage,mapperLocations]START------------------------------------ 
-2019-05-25 10:33:58 3313 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------com.tencent.backstage.modules.**.entity---------------------------------------------------- 
-2019-05-25 10:33:58 3353 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------配置[typeAliasesPackage,mapperLocations]END-------------------------------------- 
-2019-05-25 10:33:58 3357 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting... 
-2019-05-25 10:33:59 3470 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed. 
-2019-05-25 10:33:59 4344 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'clientInboundChannelExecutor' 
-2019-05-25 10:33:59 4357 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'clientOutboundChannelExecutor' 
-2019-05-25 10:34:00 5155 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@e49437, org.springframework.security.web.context.SecurityContextPersistenceFilter@77d0dbba, org.springframework.security.web.header.HeaderWriterFilter@58636b50, org.springframework.web.filter.CorsFilter@173511ff, org.springframework.security.web.authentication.logout.LogoutFilter@1de08775, com.tencent.backstage.common.jwt.JwtAuthorizationTokenFilter@5e68be2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@67ceeffd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@59f3426f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7645b7d, org.springframework.security.web.session.SessionManagementFilter@1ad1b737, org.springframework.security.web.access.ExceptionTranslationFilter@144e36ae, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5fbae40] 
-2019-05-25 10:34:00 5177 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'messageBrokerTaskScheduler' 
-2019-05-25 10:34:00 5227 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'brokerChannelExecutor' 
-2019-05-25 10:34:01 6009 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Starting... 
-2019-05-25 10:34:01 6009 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]] 
-2019-05-25 10:34:01 6010 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Started. 
-2019-05-25 10:34:01 6034 [main] INFO  org.xnio - XNIO version 3.3.8.Final 
-2019-05-25 10:34:01 6045 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.3.8.Final 
-2019-05-25 10:34:01 6113 [main] INFO  o.s.b.w.e.u.UndertowServletWebServer - Undertow started on port(s) 8090 (http) with context path '/njbj' 
-2019-05-25 10:34:01 6116 [main] INFO  c.t.backstage.BackstageApplication - Started BackstageApplication in 5.884 seconds (JVM running for 6.932) 
-2019-05-25 10:34:01 6118 [main] INFO  c.t.b.c.system.VisitsInitialization - -------------------------------------- 初始化站点统计，如果存在今日统计则跳过 -------------------------------------- 
-2019-05-25 10:34:01 6222 [main] INFO  c.t.b.c.system.VisitsInitialization - -------------------------------------- 初始化站点统计完成 ------------------------------------------------------- 
-2019-05-25 10:34:01 6224 [main] INFO  c.t.backstage.BackstageApplication - 
-----------------------------------------------------------
-	Application T-Boot is running! Access URLs:
-	Local: 		http://localhost:8090/njbj/
-	External: 	http://192.168.0.7:8090/njbj/
-	swagger-ui: 	http://192.168.0.7:8090/njbj/swagger-ui.html
-	Doc: 		http://192.168.0.7:8090/njbj/doc.html
----------------------------------------------------------- 
-2019-05-25 10:34:41 46414 [XNIO-1 task-1] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet' 
-2019-05-25 10:34:41 46414 [XNIO-1 task-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
-2019-05-25 10:34:41 46426 [XNIO-1 task-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 12 ms 
-2019-05-25 10:34:42 47117 [XNIO-1 task-2] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:34:43 47474 [XNIO-1 task-2] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 10:35:00 65226 [MessageBroker-1] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0] 
-2019-05-25 10:35:22 86623 [XNIO-1 task-4] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:35:22 86640 [XNIO-1 task-4] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 10:36:32 157406 [XNIO-1 task-6] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:36:32 157416 [XNIO-1 task-6] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 10:37:15 199603 [XNIO-1 task-8] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:37:15 199615 [XNIO-1 task-8] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 10:39:02 306663 [XNIO-1 task-10] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:39:02 306679 [XNIO-1 task-10] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 10:39:43 347509 [pool-3-thread-1] INFO  c.t.b.c.orm.MyMetaObjectHandler - start update fill .... 
-2019-05-25 10:40:22 386647 [pool-4-thread-1] INFO  c.t.b.c.orm.MyMetaObjectHandler - start update fill .... 
-2019-05-25 10:41:04 429029 [XNIO-1 task-12] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:41:04 429156 [XNIO-1 task-13] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:41:26 451333 [XNIO-1 task-15] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:41:26 451452 [XNIO-1 task-16] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:41:27 451573 [XNIO-1 task-18] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:41:27 451703 [XNIO-1 task-18] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 10:41:29 453723 [XNIO-1 task-20] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:41:29 453733 [XNIO-1 task-20] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 10:41:32 457427 [pool-5-thread-1] INFO  c.t.b.c.orm.MyMetaObjectHandler - start update fill .... 
-2019-05-25 10:41:45 470168 [XNIO-1 task-22] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:41:45 470286 [XNIO-1 task-24] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:41:45 470394 [XNIO-1 task-24] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 10:42:08 493400 [XNIO-1 task-26] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:42:09 493519 [XNIO-1 task-28] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:42:09 493631 [XNIO-1 task-28] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 10:42:15 499626 [pool-6-thread-1] INFO  c.t.b.c.orm.MyMetaObjectHandler - start update fill .... 
-2019-05-25 10:42:33 518111 [XNIO-1 task-30] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:42:33 518230 [XNIO-1 task-32] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:43:23 568412 [XNIO-1 task-32] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 10:43:27 572374 [XNIO-1 task-34] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:43:28 572492 [XNIO-1 task-36] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 10:44:57 661734 [pool-7-thread-1] INFO  c.t.b.c.orm.MyMetaObjectHandler - start update fill .... 
-2019-05-25 10:44:57 661744 [XNIO-1 task-36] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 10:46:29 753742 [pool-8-thread-1] INFO  c.t.b.c.orm.MyMetaObjectHandler - start update fill .... 
-2019-05-25 10:49:25 1137 [main] INFO  c.t.backstage.BackstageApplication - Starting BackstageApplication on DESKTOP-SDM24L1 with PID 25676 (D:\github\backstage\target\classes started by songguo in D:\github\backstage) 
-2019-05-25 10:49:25 1153 [main] INFO  c.t.backstage.BackstageApplication - The following profiles are active: dev 
-2019-05-25 10:49:29 4726 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode! 
-2019-05-25 10:49:29 4738 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode. 
-2019-05-25 10:49:29 4810 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 46ms. Found 0 repository interfaces. 
-2019-05-25 10:49:29 5257 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$55cc64fe] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:49:29 5379 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:49:29 5383 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@31a2a9fa' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:49:29 5387 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$7aa107b0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:49:29 5394 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:49:29 5424 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.tencent.backstage.common.redis.RedisConfig$$EnhancerBySpringCGLIB$$230e4b5d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:49:30 5895 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext 
-2019-05-25 10:49:30 5896 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4486 ms 
-2019-05-25 10:49:30 6191 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------配置[typeAliasesPackage,mapperLocations]START------------------------------------ 
-2019-05-25 10:49:30 6192 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------com.tencent.backstage.modules.**.entity---------------------------------------------------- 
-2019-05-25 10:49:30 6236 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------配置[typeAliasesPackage,mapperLocations]END-------------------------------------- 
-2019-05-25 10:49:30 6240 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting... 
-2019-05-25 10:49:30 6410 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed. 
-2019-05-25 10:49:32 7579 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'clientInboundChannelExecutor' 
-2019-05-25 10:49:32 7591 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'clientOutboundChannelExecutor' 
-2019-05-25 10:49:33 8557 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@12670e55, org.springframework.security.web.context.SecurityContextPersistenceFilter@6cc8c13c, org.springframework.security.web.header.HeaderWriterFilter@646e6d07, org.springframework.web.filter.CorsFilter@1cee2e10, org.springframework.security.web.authentication.logout.LogoutFilter@33f349ae, com.tencent.backstage.common.jwt.JwtAuthorizationTokenFilter@76d0ecd7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@b32e983, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@40a8a26f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@43fd77d8, org.springframework.security.web.session.SessionManagementFilter@652b3733, org.springframework.security.web.access.ExceptionTranslationFilter@686b1e2d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1fa9692b] 
-2019-05-25 10:49:33 8594 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'messageBrokerTaskScheduler' 
-2019-05-25 10:49:33 8696 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'brokerChannelExecutor' 
-2019-05-25 10:49:34 9575 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Starting... 
-2019-05-25 10:49:34 9576 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]] 
-2019-05-25 10:49:34 9577 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Started. 
-2019-05-25 10:49:34 9614 [main] INFO  org.xnio - XNIO version 3.3.8.Final 
-2019-05-25 10:49:34 9624 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.3.8.Final 
-2019-05-25 10:49:34 9726 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
-2019-05-25 10:49:34 9743 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Stopping... 
-2019-05-25 10:49:34 9743 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]] 
-2019-05-25 10:49:34 9744 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Stopped. 
-2019-05-25 10:49:34 9745 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'brokerChannelExecutor' 
-2019-05-25 10:49:34 9746 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'messageBrokerTaskScheduler' 
-2019-05-25 10:49:34 9747 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'clientOutboundChannelExecutor' 
-2019-05-25 10:49:34 9747 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'clientInboundChannelExecutor' 
-2019-05-25 10:49:34 9749 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated... 
-2019-05-25 10:49:34 9759 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed. 
-2019-05-25 10:52:30 915  [main] INFO  c.t.backstage.BackstageApplication - Starting BackstageApplication on DESKTOP-SDM24L1 with PID 25760 (D:\github\backstage\target\classes started by songguo in D:\github\backstage) 
-2019-05-25 10:52:30 918  [main] INFO  c.t.backstage.BackstageApplication - The following profiles are active: dev 
-2019-05-25 10:52:31 1977 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode! 
-2019-05-25 10:52:31 1979 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode. 
-2019-05-25 10:52:31 2046 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 52ms. Found 0 repository interfaces. 
-2019-05-25 10:52:31 2420 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$1cf2c811] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:52:31 2529 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:52:31 2532 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3513c84c' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:52:31 2536 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$41c76ac3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:52:31 2542 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:52:31 2573 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.tencent.backstage.common.redis.RedisConfig$$EnhancerBySpringCGLIB$$ea34ae70] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:52:32 2902 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext 
-2019-05-25 10:52:32 2902 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1859 ms 
-2019-05-25 10:52:32 3158 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------配置[typeAliasesPackage,mapperLocations]START------------------------------------ 
-2019-05-25 10:52:32 3158 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------com.tencent.backstage.modules.**.entity---------------------------------------------------- 
-2019-05-25 10:52:32 3178 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------配置[typeAliasesPackage,mapperLocations]END-------------------------------------- 
-2019-05-25 10:52:32 3182 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting... 
-2019-05-25 10:52:32 3288 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed. 
-2019-05-25 10:52:33 4212 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'clientInboundChannelExecutor' 
-2019-05-25 10:52:33 4224 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'clientOutboundChannelExecutor' 
-2019-05-25 10:52:34 5093 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3cead673, org.springframework.security.web.context.SecurityContextPersistenceFilter@116fc29e, org.springframework.security.web.header.HeaderWriterFilter@288409f0, org.springframework.web.filter.CorsFilter@1247c72e, org.springframework.security.web.authentication.logout.LogoutFilter@5b0e9e0c, com.tencent.backstage.common.jwt.JwtAuthorizationTokenFilter@54567b05, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1a0ffb9b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2b9d4b0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@53ba25ff, org.springframework.security.web.session.SessionManagementFilter@61eab26b, org.springframework.security.web.access.ExceptionTranslationFilter@727dcc64, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1fa98a22] 
-2019-05-25 10:52:34 5130 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'messageBrokerTaskScheduler' 
-2019-05-25 10:52:34 5199 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'brokerChannelExecutor' 
-2019-05-25 10:52:35 6022 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Starting... 
-2019-05-25 10:52:35 6022 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]] 
-2019-05-25 10:52:35 6024 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Started. 
-2019-05-25 10:52:35 6045 [main] INFO  org.xnio - XNIO version 3.3.8.Final 
-2019-05-25 10:52:35 6056 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.3.8.Final 
-2019-05-25 10:52:35 6142 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
-2019-05-25 10:52:35 6150 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Stopping... 
-2019-05-25 10:52:35 6150 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]] 
-2019-05-25 10:52:35 6150 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Stopped. 
-2019-05-25 10:52:35 6152 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'brokerChannelExecutor' 
-2019-05-25 10:52:35 6152 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'messageBrokerTaskScheduler' 
-2019-05-25 10:52:35 6153 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'clientOutboundChannelExecutor' 
-2019-05-25 10:52:35 6154 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'clientInboundChannelExecutor' 
-2019-05-25 10:52:35 6155 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated... 
-2019-05-25 10:52:35 6159 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed. 
-2019-05-25 10:58:55 874  [main] INFO  c.t.backstage.BackstageApplication - Starting BackstageApplication on DESKTOP-SDM24L1 with PID 11452 (D:\github\backstage\target\classes started by songguo in D:\github\backstage) 
-2019-05-25 10:58:55 878  [main] INFO  c.t.backstage.BackstageApplication - The following profiles are active: dev 
-2019-05-25 10:58:56 2081 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode! 
-2019-05-25 10:58:56 2084 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode. 
-2019-05-25 10:58:56 2157 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 55ms. Found 0 repository interfaces. 
-2019-05-25 10:58:57 2548 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$f84e784a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:58:57 2647 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:58:57 2651 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@388d14e' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:58:57 2655 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$1d231afc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:58:57 2661 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:58:57 2689 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.tencent.backstage.common.redis.RedisConfig$$EnhancerBySpringCGLIB$$c5905ea9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 10:58:57 3009 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext 
-2019-05-25 10:58:57 3009 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1978 ms 
-2019-05-25 10:58:57 3254 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------配置[typeAliasesPackage,mapperLocations]START------------------------------------ 
-2019-05-25 10:58:57 3254 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------com.tencent.backstage.modules.**.entity---------------------------------------------------- 
-2019-05-25 10:58:57 3274 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------配置[typeAliasesPackage,mapperLocations]END-------------------------------------- 
-2019-05-25 10:58:57 3279 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting... 
-2019-05-25 10:58:57 3407 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed. 
-2019-05-25 10:58:58 4311 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'clientInboundChannelExecutor' 
-2019-05-25 10:58:58 4322 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'clientOutboundChannelExecutor' 
-2019-05-25 10:58:59 5102 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1131aead, org.springframework.security.web.context.SecurityContextPersistenceFilter@631944d4, org.springframework.security.web.header.HeaderWriterFilter@448086ab, org.springframework.web.filter.CorsFilter@5940b14e, org.springframework.security.web.authentication.logout.LogoutFilter@1d2046bb, com.tencent.backstage.common.jwt.JwtAuthorizationTokenFilter@652e345, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@60ae7cf2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1c011855, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7d126083, org.springframework.security.web.session.SessionManagementFilter@6de610c6, org.springframework.security.web.access.ExceptionTranslationFilter@2ffa91dc, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@629cbb1] 
-2019-05-25 10:58:59 5123 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'messageBrokerTaskScheduler' 
-2019-05-25 10:58:59 5172 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'brokerChannelExecutor' 
-2019-05-25 10:59:00 5935 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Starting... 
-2019-05-25 10:59:00 5936 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]] 
-2019-05-25 10:59:00 5937 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Started. 
-2019-05-25 10:59:00 5958 [main] INFO  org.xnio - XNIO version 3.3.8.Final 
-2019-05-25 10:59:00 5970 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.3.8.Final 
-2019-05-25 10:59:00 6092 [main] INFO  o.s.b.w.e.u.UndertowServletWebServer - Undertow started on port(s) 8090 (http) with context path '/njbj' 
-2019-05-25 10:59:00 6100 [main] INFO  c.t.backstage.BackstageApplication - Started BackstageApplication in 5.943 seconds (JVM running for 6.834) 
-2019-05-25 10:59:00 6106 [main] INFO  c.t.b.c.system.VisitsInitialization - -------------------------------------- 初始化站点统计，如果存在今日统计则跳过 -------------------------------------- 
-2019-05-25 10:59:00 6269 [main] INFO  c.t.b.c.system.VisitsInitialization - -------------------------------------- 初始化站点统计完成 ------------------------------------------------------- 
-2019-05-25 10:59:00 6270 [main] INFO  c.t.backstage.BackstageApplication - 
-----------------------------------------------------------
-	Application T-Boot is running! Access URLs:
-	Local: 		http://localhost:8090/njbj/
-	External: 	http://192.168.0.7:8090/njbj/
-	swagger-ui: 	http://192.168.0.7:8090/njbj/swagger-ui.html
-	Doc: 		http://192.168.0.7:8090/njbj/doc.html
----------------------------------------------------------- 
-2019-05-25 10:59:59 65171 [MessageBroker-1] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0] 
-2019-05-25 11:01:09 134920 [XNIO-1 task-1] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet' 
-2019-05-25 11:01:09 134920 [XNIO-1 task-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
-2019-05-25 11:01:09 134933 [XNIO-1 task-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 13 ms 
-2019-05-25 11:01:09 135485 [XNIO-1 task-2] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 11:01:10 136170 [XNIO-1 task-2] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 11:01:29 154739 [Thread-13] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Stopping... 
-2019-05-25 11:01:29 154740 [Thread-13] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]] 
-2019-05-25 11:01:29 154740 [Thread-13] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Stopped. 
-2019-05-25 11:01:29 154742 [Thread-13] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'brokerChannelExecutor' 
-2019-05-25 11:01:29 154742 [Thread-13] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'messageBrokerTaskScheduler' 
-2019-05-25 11:01:29 154749 [Thread-13] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'clientOutboundChannelExecutor' 
-2019-05-25 11:01:29 154749 [Thread-13] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'clientInboundChannelExecutor' 
-2019-05-25 11:01:29 154750 [Thread-13] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated... 
-2019-05-25 11:01:29 154757 [Thread-13] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed. 
-2019-05-25 11:01:29 154760 [Thread-13] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet' 
-2019-05-25 11:01:35 896  [main] INFO  c.t.backstage.BackstageApplication - Starting BackstageApplication on DESKTOP-SDM24L1 with PID 1812 (D:\github\backstage\target\classes started by songguo in D:\github\backstage) 
-2019-05-25 11:01:35 901  [main] INFO  c.t.backstage.BackstageApplication - The following profiles are active: dev 
-2019-05-25 11:01:36 1957 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode! 
-2019-05-25 11:01:36 1960 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode. 
-2019-05-25 11:01:36 2018 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 42ms. Found 0 repository interfaces. 
-2019-05-25 11:01:37 2424 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$da2d18e7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 11:01:37 2526 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 11:01:37 2530 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@164642a4' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 11:01:37 2533 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$ff01bb99] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 11:01:37 2540 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 11:01:37 2567 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.tencent.backstage.common.redis.RedisConfig$$EnhancerBySpringCGLIB$$a76eff46] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 11:01:37 2876 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext 
-2019-05-25 11:01:37 2876 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1858 ms 
-2019-05-25 11:01:37 3044 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------配置[typeAliasesPackage,mapperLocations]START------------------------------------ 
-2019-05-25 11:01:37 3045 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------com.tencent.backstage.modules.**.entity---------------------------------------------------- 
-2019-05-25 11:01:37 3137 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------配置[typeAliasesPackage,mapperLocations]END-------------------------------------- 
-2019-05-25 11:01:37 3141 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting... 
-2019-05-25 11:01:37 3264 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed. 
-2019-05-25 11:01:38 4165 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'clientInboundChannelExecutor' 
-2019-05-25 11:01:38 4176 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'clientOutboundChannelExecutor' 
-2019-05-25 11:01:39 4980 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@59f76e56, org.springframework.security.web.context.SecurityContextPersistenceFilter@1aaf46e6, org.springframework.security.web.header.HeaderWriterFilter@f49e81a, org.springframework.web.filter.CorsFilter@524f5ea5, org.springframework.security.web.authentication.logout.LogoutFilter@72a34537, com.tencent.backstage.common.jwt.JwtAuthorizationTokenFilter@15994b0b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@23df7fad, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4b7ab7ab, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@566f4659, org.springframework.security.web.session.SessionManagementFilter@459bf87c, org.springframework.security.web.access.ExceptionTranslationFilter@70d687b8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7d18338b] 
-2019-05-25 11:01:39 5004 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'messageBrokerTaskScheduler' 
-2019-05-25 11:01:39 5056 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'brokerChannelExecutor' 
-2019-05-25 11:01:40 5808 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Starting... 
-2019-05-25 11:01:40 5809 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]] 
-2019-05-25 11:01:40 5810 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Started. 
-2019-05-25 11:01:40 5835 [main] INFO  org.xnio - XNIO version 3.3.8.Final 
-2019-05-25 11:01:40 5847 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.3.8.Final 
-2019-05-25 11:01:40 5918 [main] INFO  o.s.b.w.e.u.UndertowServletWebServer - Undertow started on port(s) 8090 (http) with context path '/njbj' 
-2019-05-25 11:01:40 5920 [main] INFO  c.t.backstage.BackstageApplication - Started BackstageApplication in 5.755 seconds (JVM running for 6.666) 
-2019-05-25 11:01:40 5922 [main] INFO  c.t.b.c.system.VisitsInitialization - -------------------------------------- 初始化站点统计，如果存在今日统计则跳过 -------------------------------------- 
-2019-05-25 11:01:40 6089 [main] INFO  c.t.b.c.system.VisitsInitialization - -------------------------------------- 初始化站点统计完成 ------------------------------------------------------- 
-2019-05-25 11:01:40 6091 [main] INFO  c.t.backstage.BackstageApplication - 
-----------------------------------------------------------
-	Application T-Boot is running! Access URLs:
-	Local: 		http://localhost:8090/njbj/
-	External: 	http://192.168.0.7:8090/njbj/
-	swagger-ui: 	http://192.168.0.7:8090/njbj/swagger-ui.html
-	Doc: 		http://192.168.0.7:8090/njbj/doc.html
----------------------------------------------------------- 
-2019-05-25 11:02:39 65055 [MessageBroker-1] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0] 
-2019-05-25 11:02:46 72385 [XNIO-1 task-1] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet' 
-2019-05-25 11:02:46 72385 [XNIO-1 task-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
-2019-05-25 11:02:46 72398 [XNIO-1 task-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 12 ms 
-2019-05-25 11:02:47 72881 [XNIO-1 task-2] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 11:03:06 91618 [XNIO-1 task-4] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 11:03:06 91755 [XNIO-1 task-5] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 11:03:06 91874 [XNIO-1 task-7] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 11:03:06 92012 [XNIO-1 task-7] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 11:03:06 92124 [XNIO-1 task-7] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 11:05:30 236116 [Thread-12] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Stopping... 
-2019-05-25 11:05:30 236117 [Thread-12] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]] 
-2019-05-25 11:05:30 236117 [Thread-12] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Stopped. 
-2019-05-25 11:05:30 236119 [Thread-12] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'brokerChannelExecutor' 
-2019-05-25 11:05:30 236120 [Thread-12] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'messageBrokerTaskScheduler' 
-2019-05-25 11:05:30 236126 [Thread-12] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'clientOutboundChannelExecutor' 
-2019-05-25 11:05:30 236126 [Thread-12] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'clientInboundChannelExecutor' 
-2019-05-25 11:05:30 236127 [Thread-12] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated... 
-2019-05-25 11:05:30 236134 [Thread-12] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed. 
-2019-05-25 11:05:30 236135 [Thread-12] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet' 
-2019-05-25 11:05:37 834  [main] INFO  c.t.backstage.BackstageApplication - Starting BackstageApplication on DESKTOP-SDM24L1 with PID 23260 (D:\github\backstage\target\classes started by songguo in D:\github\backstage) 
-2019-05-25 11:05:37 838  [main] INFO  c.t.backstage.BackstageApplication - The following profiles are active: dev 
-2019-05-25 11:05:38 1784 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode! 
-2019-05-25 11:05:38 1787 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode. 
-2019-05-25 11:05:38 1868 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 59ms. Found 0 repository interfaces. 
-2019-05-25 11:05:38 2256 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$c23600b3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 11:05:38 2348 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 11:05:38 2351 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@32120956' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 11:05:38 2354 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$e70aa365] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 11:05:38 2361 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 11:05:38 2388 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.tencent.backstage.common.redis.RedisConfig$$EnhancerBySpringCGLIB$$8f77e712] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
-2019-05-25 11:05:39 2697 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext 
-2019-05-25 11:05:39 2698 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1812 ms 
-2019-05-25 11:05:39 2979 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------配置[typeAliasesPackage,mapperLocations]START------------------------------------ 
-2019-05-25 11:05:39 2979 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------com.tencent.backstage.modules.**.entity---------------------------------------------------- 
-2019-05-25 11:05:39 3001 [main] INFO  c.t.b.config.orm.MybatisPlusConfig - --------------------------------------配置[typeAliasesPackage,mapperLocations]END-------------------------------------- 
-2019-05-25 11:05:39 3005 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting... 
-2019-05-25 11:05:39 3123 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed. 
-2019-05-25 11:05:40 4006 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'clientInboundChannelExecutor' 
-2019-05-25 11:05:40 4018 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'clientOutboundChannelExecutor' 
-2019-05-25 11:05:41 4812 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1fa98a22, org.springframework.security.web.context.SecurityContextPersistenceFilter@2f6f4ac4, org.springframework.security.web.header.HeaderWriterFilter@70777a65, org.springframework.web.filter.CorsFilter@4c2c44e8, org.springframework.security.web.authentication.logout.LogoutFilter@3350ab4, com.tencent.backstage.common.jwt.JwtAuthorizationTokenFilter@7c5f29c6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@49e62b17, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1a0ffb9b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@54941dfd, org.springframework.security.web.session.SessionManagementFilter@402f61f5, org.springframework.security.web.access.ExceptionTranslationFilter@7df3da0b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@50672905] 
-2019-05-25 11:05:41 4833 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'messageBrokerTaskScheduler' 
-2019-05-25 11:05:41 4881 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'brokerChannelExecutor' 
-2019-05-25 11:05:42 5612 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Starting... 
-2019-05-25 11:05:42 5612 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]] 
-2019-05-25 11:05:42 5613 [main] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Started. 
-2019-05-25 11:05:42 5638 [main] INFO  org.xnio - XNIO version 3.3.8.Final 
-2019-05-25 11:05:42 5650 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.3.8.Final 
-2019-05-25 11:05:42 5713 [main] INFO  o.s.b.w.e.u.UndertowServletWebServer - Undertow started on port(s) 8090 (http) with context path '/njbj' 
-2019-05-25 11:05:42 5716 [main] INFO  c.t.backstage.BackstageApplication - Started BackstageApplication in 5.566 seconds (JVM running for 6.564) 
-2019-05-25 11:05:42 5718 [main] INFO  c.t.b.c.system.VisitsInitialization - -------------------------------------- 初始化站点统计，如果存在今日统计则跳过 -------------------------------------- 
-2019-05-25 11:05:42 5838 [main] INFO  c.t.b.c.system.VisitsInitialization - -------------------------------------- 初始化站点统计完成 ------------------------------------------------------- 
-2019-05-25 11:05:42 5839 [main] INFO  c.t.backstage.BackstageApplication - 
-----------------------------------------------------------
-	Application T-Boot is running! Access URLs:
-	Local: 		http://localhost:8090/njbj/
-	External: 	http://192.168.0.7:8090/njbj/
-	swagger-ui: 	http://192.168.0.7:8090/njbj/swagger-ui.html
-	Doc: 		http://192.168.0.7:8090/njbj/doc.html
----------------------------------------------------------- 
-2019-05-25 11:05:57 21270 [XNIO-1 task-1] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet' 
-2019-05-25 11:05:57 21271 [XNIO-1 task-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
-2019-05-25 11:05:57 21282 [XNIO-1 task-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 11 ms 
-2019-05-25 11:05:58 22081 [XNIO-1 task-2] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 11:05:58 22248 [XNIO-1 task-4] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 11:05:58 22412 [XNIO-1 task-4] INFO  c.t.b.c.orm.MyMetaObjectHandler - start update fill .... 
-2019-05-25 11:05:58 22508 [XNIO-1 task-4] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 11:05:59 22697 [XNIO-1 task-6] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 11:06:15 39236 [XNIO-1 task-8] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 11:06:15 39548 [XNIO-1 task-8] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 11:06:38 62329 [XNIO-1 task-10] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 11:06:38 62452 [XNIO-1 task-11] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 11:06:38 62573 [XNIO-1 task-13] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 11:06:39 62684 [XNIO-1 task-13] INFO  c.t.b.c.orm.MyMetaObjectHandler - start update fill .... 
-2019-05-25 11:06:39 62717 [XNIO-1 task-13] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 11:06:39 62805 [XNIO-1 task-15] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 11:06:41 64890 [MessageBroker-1] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0] 
-2019-05-25 11:06:56 80286 [XNIO-1 task-17] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 11:06:57 81582 [XNIO-1 task-18] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 11:06:59 82734 [XNIO-1 task-19] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 11:07:00 83979 [XNIO-1 task-20] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 11:07:02 85670 [XNIO-1 task-22] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 11:07:08 91940 [XNIO-1 task-24] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 11:07:40 124466 [XNIO-1 task-26] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 11:07:42 125986 [XNIO-1 task-26] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 11:10:00 264029 [XNIO-1 task-28] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 11:10:03 266926 [XNIO-1 task-28] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 11:10:22 286009 [XNIO-1 task-30] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 11:10:22 286029 [XNIO-1 task-30] INFO  c.t.backstage.common.utils.FileUtil - 文件上传的存储路径为: D:\uploadavatar 
-2019-05-25 11:10:23 286847 [XNIO-1 task-30] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 11:10:23 286983 [XNIO-1 task-30] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 11:11:15 339560 [pool-3-thread-1] INFO  c.t.b.c.orm.MyMetaObjectHandler - start update fill .... 
-2019-05-25 11:11:25 349535 [XNIO-1 task-33] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
-2019-05-25 11:11:27 351042 [XNIO-1 task-33] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
-2019-05-25 11:16:21 644764 [Thread-11] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Stopping... 
-2019-05-25 11:16:21 644764 [Thread-11] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]] 
-2019-05-25 11:16:21 644765 [Thread-11] INFO  o.s.m.s.b.SimpleBrokerMessageHandler - Stopped. 
-2019-05-25 11:16:21 644767 [Thread-11] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'brokerChannelExecutor' 
-2019-05-25 11:16:21 644767 [Thread-11] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'messageBrokerTaskScheduler' 
-2019-05-25 11:16:21 644772 [Thread-11] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'clientOutboundChannelExecutor' 
-2019-05-25 11:16:21 644773 [Thread-11] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'clientInboundChannelExecutor' 
-2019-05-25 11:16:21 644774 [Thread-11] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated... 
-2019-05-25 11:16:21 644778 [Thread-11] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed. 
-2019-05-25 11:16:21 644780 [Thread-11] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet' 
+2019-06-04 14:46:12 59026 [XNIO-1 task-1] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2019-06-04 14:46:12 59026 [XNIO-1 task-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2019-06-04 14:46:12 59062 [XNIO-1 task-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 35 ms 
+2019-06-04 14:46:14 60449 [XNIO-1 task-2] INFO  c.t.b.m.s.s.JwtPermissionService - --------------------loadPermissionByUser:admin--------------------- 
+2019-06-04 14:46:14 60500 [XNIO-1 task-2] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:46:14 60603 [XNIO-1 task-4] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:46:14 60925 [XNIO-1 task-6] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:46:14 61070 [XNIO-1 task-6] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:46:22 68495 [XNIO-1 task-8] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:46:22 68661 [XNIO-1 task-8] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:46:22 68739 [XNIO-1 task-10] INFO  c.t.b.m.s.s.JwtPermissionService - --------------------loadPermissionByUser:admin--------------------- 
+2019-06-04 14:46:22 68761 [XNIO-1 task-10] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:46:22 68776 [XNIO-1 task-10] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:46:25 72172 [MessageBroker-1] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0] 
+2019-06-04 14:46:53 99409 [XNIO-1 task-12] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:46:53 99538 [XNIO-1 task-12] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:46:53 99624 [XNIO-1 task-14] INFO  c.t.b.m.s.s.JwtPermissionService - --------------------loadPermissionByUser:admin--------------------- 
+2019-06-04 14:46:53 99645 [XNIO-1 task-14] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:46:53 99656 [XNIO-1 task-14] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:50:16 303245 [XNIO-1 task-16] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:50:17 303413 [XNIO-1 task-18] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:50:17 303813 [XNIO-1 task-22] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:50:17 303838 [XNIO-1 task-22] INFO  c.t.b.c.orm.MyMetaObjectHandler - start update fill .... 
+2019-06-04 14:50:17 303885 [XNIO-1 task-24] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:50:17 303885 [XNIO-1 task-23] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:50:39 325659 [XNIO-1 task-29] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:50:39 325659 [XNIO-1 task-30] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:50:39 325661 [XNIO-1 task-28] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:50:39 325706 [XNIO-1 task-28] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:50:39 326073 [XNIO-1 task-29] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:50:39 326174 [XNIO-1 task-30] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:50:43 329397 [XNIO-1 task-34] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:50:43 329398 [XNIO-1 task-35] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:50:43 329401 [XNIO-1 task-36] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:50:43 329509 [XNIO-1 task-36] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:50:45 331538 [XNIO-1 task-38] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:50:45 331556 [XNIO-1 task-38] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:50:47 333327 [XNIO-1 task-40] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:50:47 333342 [XNIO-1 task-40] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:50:49 335528 [XNIO-1 task-42] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:50:54 341097 [XNIO-1 task-44] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:50:54 341144 [XNIO-1 task-44] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:50:58 344681 [XNIO-1 task-46] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:50:58 344709 [XNIO-1 task-46] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:51:11 357367 [XNIO-1 task-49] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:51:11 357374 [XNIO-1 task-50] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:51:17 363812 [XNIO-1 task-54] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:51:17 363818 [XNIO-1 task-55] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:51:17 363820 [XNIO-1 task-56] INFO  c.t.b.c.j.JwtAuthorizationTokenFilter - authorizated user 'admin', setting security context 
+2019-06-04 14:51:17 363823 [XNIO-1 task-54] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:51:17 363824 [XNIO-1 task-56] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
+2019-06-04 14:51:17 363828 [XNIO-1 task-55] INFO  c.t.b.c.orm.MyMetaObjectHandler - start insert fill .... 
