@@ -91,3 +91,9 @@ jwt:
 
 #上传路径(不填则自动读取项目根路径)
 uploadPath:
+
+
+#Swagger
+swagger:
+  title: 售电项目接口文档
+  version: 1.0
