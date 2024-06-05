@@ -30,7 +30,7 @@
         <jedis.version>2.9.0</jedis.version>
         <commons-pool2.version>2.5.0</commons-pool2.version>
         <lombok.version>1.18.8</lombok.version>
-        <common.beanutils.version>1.9.3</common.beanutils.version>
+        <common.beanutils.version>1.9.4</common.beanutils.version>
         <mp.version>3.1.1</mp.version>
         <swagger2.version>2.9.2</swagger2.version>
     </properties>
