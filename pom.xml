@@ -32,7 +32,7 @@
         <lombok.version>1.18.8</lombok.version>
         <common.beanutils.version>1.9.3</common.beanutils.version>
         <mp.version>3.1.1</mp.version>
-        <swagger2.version>2.9.2</swagger2.version>
+        <swagger2.version>2.10.0</swagger2.version>
     </properties>
 
     <dependencies>
